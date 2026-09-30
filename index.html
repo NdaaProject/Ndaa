@@ -311,6 +311,7 @@
       <span class="ba-tag after">EDIT</span>
       <div class="ba-handle" id="baHandle"></div>
     </div>
+  <div class="ba-head"></div>
   <div> <p>Juara 3 Fotografi Jurnalistkik PKKMB UMK.</p></div>
   </div>
 </section>
@@ -339,10 +340,10 @@
       <h2>Portofolio</h2>
       <div class="filters" id="filters">
         <button class="active" data-f="all">Semua</button>
-        <button data-f="street">Street</button>
-        <button data-f="event">Event</button>
-        <button data-f="candid">Candid</button>
-        <button data-f="city">City</button>
+        <button data-f="street">Pamapala</button>
+        <button data-f="event">Osis</button>
+        <button data-f="candid">Voluntier</button>
+        <button data-f="city">Other</button>
       </div>
     </div>
     <div class="grid" id="grid"></div>
@@ -362,16 +363,9 @@
         <a href="https://discordapp.com/users/1521118479384711188" target="_blank" rel="noopener">Discord</a>
         <a href="https://github.com/NdaaProject" target="_blank" rel="noopener">Github</a>
         <a href="https://www.instagram.com/nda_avwxyz?stkn=cGRxeHR2cjY3OXRy" target="_blank" rel="noopener">Instagram</a>
-        <a href="tiktok.com/@ndaa_avwxyz" rel="noopener">TikTok</a>
+        <a href="https://tiktok.com/@ndaa_avwxyz" rel="noopener">TikTok</a>
       </div>
     </div>
-    <form id="contactForm">
-      <input type="text" placeholder="Nama" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Pesan"></textarea>
-      <button type="submit">Kirim Pesan</button>
-      <p class="form-note" id="formNote"></p>
-    </form>
   </div>
 </section>
 
@@ -464,5 +458,34 @@ render('all');
   });
 </script>
 
+<audio id="music" autoplay loop>
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+
+
+<body> 
+  <h2>Klik halaman untuk memutar musik 🎵</h2> 
+  <audio id="music" loop> 
+    <source src="./audio.mp3" type="audio/mpeg"> </audio> 
+    <script> const music = document.getElementById("music"); 
+    document.addEventListener("click", () => { music.play() .then(() => { 
+      console.log("Musik berhasil diputar"); }) .catch(error => { console.log("Gagal memutar:", error); }); }, { once: true }); </script> </body>
+
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Music</title> 
+  <style> #music-notification 
+  { 
+    position: fixed; top: 20px; 
+    right: 20px; background: rgba(30, 30, 30, 0.95); 
+    color: white; 
+    padding: 12px 18px;
+     border-radius: 12px;
+      font-family: Arial, sans-serif;
+       font-size: 14px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+         z-index: 9999;
+          opacity: 0; transform: translateY(-10px); transition: 0.3s ease; } #music-notification.show { opacity: 1; transform: translateY(0); } </style> </head> <body> <div id="music-notification"> 🎵 Playing music... </div> <audio id="music" autoplay loop> <source src="audio.mp3" type="audio/mpeg"> </audio> <script> const music = document.getElementById("music"); const notification = document.getElementById("music-notification"); // Coba autoplay music.play().catch(() => { console.log("Autoplay diblokir browser."); }); // Tampilkan notifikasi notification.classList.add("show"); // Hilangkan setelah 2 detik setTimeout(() => { notification.classList.remove("show"); }, 2000); </script> </body>
 </body>
 </html>
